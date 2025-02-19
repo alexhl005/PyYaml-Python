@@ -1,0 +1,41 @@
+backend:
+  httpPort: '8080'
+certs:
+  commonName:
+  - '{{ wp.domain }}'
+  - '{{ nc.domain }}'
+  - '{{ wp.domain }}/CN={{ nc.domain }}'
+  country: ES
+  locality: Cordoba
+  organization: ASIR
+  state: Cordoba
+  unitOrganization: AR
+common:
+  phpModules:
+  - php-curl
+  - php-gd
+  - php-mbstring
+  - php-xml
+  - php-xmlrpc
+  - php-soap
+  - php-intl
+  - php-zip
+  - php-imagick
+mysql:
+  rootPassword: root
+nc:
+  db:
+    name: ncdb
+    password: ncdbu
+    user: ncdbu
+  domain: nc
+  ip: 127.0.0.1
+  virtualHostFile: '{{ nc.domain }}.conf'
+wp:
+  db:
+    name: wpdb
+    password: wpdbu
+    user: wpdbu
+  domain: wp
+  ip: '"1.1.1.1"'
+  virtualHostFile: '{{ wp.domain }}.conf'
