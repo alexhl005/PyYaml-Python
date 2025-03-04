@@ -33,9 +33,9 @@ nc:
   virtualHostFile: '{{ nc.domain }}.conf'
 wp:
   db:
-    name: wpdb
-    password: wpdbu
-    user: wpdbu
+    name: wp
+    password: wpp
+    user: wpu
   domain: wp
-  ip: '"1.1.1.1"'
+  ip: 1.1.1.1
   virtualHostFile: '{{ wp.domain }}.conf'
